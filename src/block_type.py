@@ -10,6 +10,7 @@ class Block_type:
 		self.vertex_positions = numbers.vertex_positions
 		self.tex_coords = numbers.tex_coords.copy()  # we need to create a copy of this, since we need to modify our texture coordinates in a different way for each block type (to have different textures per block)
 		self.indices = numbers.indices
+		self.shading_values = numbers.shading_values
 
 		def set_block_face(face, texture):  # set a specific face of the block to a certain texture
 			for vertex in range(4):
