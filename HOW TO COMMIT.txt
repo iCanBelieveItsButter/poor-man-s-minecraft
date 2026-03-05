@@ -1,0 +1,21 @@
+1. first make sure you're in the correct folder:
+
+cd /Users/gradenspeece/Documents/minecraft_clone
+
+2. initialize git locally:
+
+git init
+
+3. add your files:
+
+git add .
+
+(check with : git status)
+
+4. commit changes:
+
+git commit -m "describe what you changed"
+
+5. push:
+
+git push
