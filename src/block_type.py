@@ -1,3 +1,5 @@
+import collider
+
 import models.cube
 
 
@@ -7,6 +9,14 @@ class Block_type:
 
 		self.transparent = model.transparent
 		self.is_cube = model.is_cube
+		self.model = model
+
+		## colliders
+
+		self.colliders = []
+
+		for _c in model.colliders:
+			self.colliders.append(collider.Collider(*_c))
 
 		self.vertex_positions = model.vertex_positions
 		self.tex_coords = model.tex_coords.copy()  

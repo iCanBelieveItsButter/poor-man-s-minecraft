@@ -124,6 +124,15 @@ class World:
         if lz == chunk.CHUNK_LENGTH - 1: try_update_chunk_at_position((cx, cy, cz + 1), (x, y, z + 1))
         if lz == 0: try_update_chunk_at_position((cx, cy, cz - 1), (x, y, z - 1))
 
+    def try_set_block(self, pos, num, collider):
+        if not num:
+            return self.set_block(pos, 0)
+        
+        for block_col in self.block_types[num].colliders:
+            if collider & (block_col + pos):
+                return
+            
+        self.set_block(pos, num)
 
     def draw(self):
         for chunk_position in self.chunks:
